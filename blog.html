@@ -1,16 +1,14 @@
 ---
 layout: default
-title: Tin tức
+title: Blog
 ---
 
-<section>
-  <h2>Tin tức & Bài viết</h2>
-  <ul>
-    {% for post in site.posts %}
-      <li>
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-        <small>{{ post.date | date: "%d/%m/%Y" }}</small>
-      </li>
-    {% endfor %}
-  </ul>
-</section>
+<h2>Bài viết</h2>
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
+      <small>{{ post.date | date: "%d/%m/%Y" }}</small>
+    </li>
+  {% endfor %}
+</ul>
