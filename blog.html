@@ -1,14 +1,14 @@
----
-layout: default
-title: Blog
----
-
-<h2>Bài viết</h2>
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a><br>
-      <small>{{ post.date | date: "%d/%m/%Y" }}</small>
-    </li>
-  {% endfor %}
-</ul>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Blog</title>
+</head>
+<body>
+  <h2>Bài viết</h2>
+  <ul>
+    <li><a href="post.html?post=bai-1.md">Lịch sinh hoạt tháng 7</a></li>
+    <li><a href="post.html?post=bai-2.md">Báo cáo sơ kết</a></li>
+  </ul>
+</body>
+</html>
