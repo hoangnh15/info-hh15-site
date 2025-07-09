@@ -1,4 +1,4 @@
 title: My Website
 description: Website với blog dùng Jekyll
 theme: minima  # hoặc dùng layout tự viết
-baseurl: "/info.hh15.github.io"
+baseurl: "https://hoangnh15.github.io/info-hh15-site/"
