@@ -8,22 +8,21 @@
   <h2>Bài viết</h2>
   <ul id="post-list">Đang tải bài viết...</ul>
 
-  <script>
-    fetch('posts/index.json')
-      .then(response => response.json())
-      .then(posts => {
-        const list = document.getElementById('post-list');
-        list.innerHTML = '';
-        posts.forEach(post => {
-          const li = document.createElement('li');
-          li.innerHTML = `<a href="post.html?post=${post.file}">${post.title}</a> - <small>${post.date}</small>`;
-          list.appendChild(li);
-        });
-      })
-      .catch(err => {
-        document.getElementById('post-list').innerText = 'Không thể tải danh sách bài viết.';
-        console.error(err);
+ <script>
+  fetch('posts/index.json')
+    .then(res => res.json())
+    .then(posts => {
+      const list = document.getElementById('post-list');
+      list.innerHTML = '';
+      posts.forEach(post => {
+        const li = document.createElement('li');
+        li.innerHTML = `<a href="post.html?post=${post.file}">${post.title}</a> <small>(${post.date})</small>`;
+        list.appendChild(li);
       });
-  </script>
+    })
+    .catch(() => {
+      document.getElementById('post-list').textContent = 'Không tải được bài viết.';
+    });
+</script>
 </body>
 </html>

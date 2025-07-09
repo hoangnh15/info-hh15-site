@@ -1,0 +1,32 @@
+name: Tạo index.json bài viết tự động
+
+on:
+  push:
+    paths:
+      - 'posts/**.md'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Cài Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Tạo package.json
+        run: npm init -y
+
+      - name: Tạo index.json từ posts/
+        run: node generate-index.js
+
+      - name: Commit lại index.json
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add posts/index.json
+          git commit -m "Cập nhật index.json tự động"
+          git push
