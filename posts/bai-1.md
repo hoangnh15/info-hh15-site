@@ -1,5 +1,5 @@
 ---
-title: Lịch sinh hoạt tháng 7
+title: Bài 1
 date: 2025-07-10
 ---
 
